@@ -1,6 +1,7 @@
 #################################################################################################
 #  This code compares a nested function with small "class version" of the same implementation.  #
 #  Conclusion : In Python, use class instead of nested function!                                #
+#  Python : 3.x                                                                                 #
 #################################################################################################
 
 ################## Class version
