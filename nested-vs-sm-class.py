@@ -33,5 +33,5 @@ def trace(root):
 print("Nested function:", timeit.timeit("trace(r)", setup="from __main__ import trace, r"))
 
 ################## Result
-# Simple class: 0.3320003330009058
+# Simple class: 0.2400555419999364
 # Nested function: 1.5396377079996455
