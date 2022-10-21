@@ -7,18 +7,17 @@
 ################## Class version
 class Trace:
   nodes, edges = set(), set()
-  def __init__(self, root):
-    self.build(root)
-  
+
   def build(self, v):
     if v not in self.nodes:
       self.nodes.add(v)
       for child in v._prev:
         self.edges.add((child, v))
-        self.build(child)
-  def get(self):
+        self.build(self, child)
+  def __new__(self, root):
+    self.build(self, root)
     return self.nodes, self.edges
-print("Simple class:", timeit.timeit("Trace(r).get()", setup="from __main__ import Trace, r"))
+print("Class 2:", timeit.timeit("Trace(r)", setup="from __main__ import Trace, r"))
 
 ################## Nested function version
 def trace(root):
